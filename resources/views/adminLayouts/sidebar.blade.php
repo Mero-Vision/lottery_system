@@ -87,7 +87,7 @@
 
              <li class="menu">
                  <a href="#users" data-toggle="collapse"
-                     data-active="{{ request()->is('admin/profile*') ? 'true' : '' }}" aria-expanded="false"
+                     data-active="{{ request()->is('admin/users*') ? 'true' : '' }}" aria-expanded="false"
                      class="dropdown-toggle">
                      <div class="">
                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -109,12 +109,10 @@
                      </div>
                  </a>
                  <ul class="collapse submenu list-unstyled" id="users" data-parent="#accordionExample">
-                     <li class="{{ request()->is('admin/profile') ? 'active' : '' }}">
-                         <a href="{{ url('admin/profile') }}"> Profile </a>
+                     <li class="{{ request()->is('admin/users') ? 'active' : '' }}">
+                         <a href="{{ url('admin/users') }}"> Users Management </a>
                      </li>
-                     <li class="{{ request()->is('admin/profile/account-setting') ? 'active' : '' }}">
-                         <a href="{{ url('/admin/profile/account-setting') }}">Account Settings </a>
-                     </li>
+                     
                  </ul>
              </li>
 

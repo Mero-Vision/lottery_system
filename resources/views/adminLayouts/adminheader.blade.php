@@ -6,3 +6,4 @@
 <link href="{{ url('assets/css/plugins.css') }}" rel="stylesheet" type="text/css" />
 <script src="{{ url('assets/js/jquery-3.1.1.min.js') }}"></script>
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
