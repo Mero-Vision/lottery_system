@@ -9,8 +9,11 @@
         "garygreen/pretty-routes": "^1.0",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^10.10",
+        "laravel/passport": "^11.10",
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
+        "php-flasher/flasher-laravel": "^1.15",
+        "php-flasher/flasher-sweetalert-laravel": "^1.15",
         "spatie/laravel-medialibrary": "^10.15",
         "spatie/laravel-permission": "^6.2"
     },
