@@ -20,9 +20,9 @@
         <div class="container" data-aos="zoom-out" data-aos-delay="100">
             <div class="row">
                 <div class="col-xl-6">
-                    <h1>Bettter digital experience with Presento</h1>
-                    <h2>We are team of talented designers making websites with Bootstrap</h2>
-                    <a href="#about" class="btn-get-started scrollto">Get Started</a>
+                    <h1>Dare to Dream, Play to Win!</h1>
+                    <h2>Unlock Your Fortune, One Ticket at a Time!</h2>
+                    <a href="#about" class="btn-get-started scrollto">See Results</a>
                 </div>
             </div>
         </div>
