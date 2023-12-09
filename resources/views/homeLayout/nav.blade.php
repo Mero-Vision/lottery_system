@@ -15,6 +15,6 @@
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
 
-        <a href="#about" class="get-started-btn scrollto">Login</a>
+        <a href="{{url('/login')}}" class="get-started-btn scrollto">Login</a>
     </div>
 </header><!-- End Header -->

@@ -18,5 +18,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',[HomeController::class,'index']);
 
 Route::get('/login',[AuthController::class,'index']);
+Route::post('/login', [AuthController::class, 'login']);
 
 Route::get('/login/forgot-password', [AuthController::class, 'forgotPasswordIndex']);
