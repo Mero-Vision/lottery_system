@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,3 +22,8 @@ Route::get('/login',[AuthController::class,'index']);
 Route::post('/login', [AuthController::class, 'login']);
 
 Route::get('/login/forgot-password', [AuthController::class, 'forgotPasswordIndex']);
+
+Route::prefix('admin')->group(function () {
+    Route::get('/dashboard',[DashboardController::class,'index']);
+    
+});
