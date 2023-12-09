@@ -6,7 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
     <title>Password Recovery</title>
-    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+    <link rel="icon" type="image/x-icon" sizes="256x256" href="{{ url('assets/img/256.ico') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url('assets/img/icon.png') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url('assets/img/32.ico') }}">
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
     <link href="{{ url('assets/css/systembootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ url('assets/css/plugins.css') }}" rel="stylesheet" type="text/css" />
@@ -23,7 +25,8 @@
 
                         <h1 class="">Password Recovery</h1>
                         <p class="signup-link recovery">Enter your email and instructions will sent to you!</p>
-                        <form class="text-left">
+                        <form action="{{ url('/login/forgot-password') }}" method="POST" class="text-left">
+                            @csrf
                             <div class="form">
 
                                 <div id="email-field" class="field-wrapper input">
@@ -38,6 +41,9 @@
                                     </svg>
                                     <input id="email" name="email" type="text" class="form-control"
                                         value="" placeholder="Email">
+                                    @error('email')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
 
                                 <div class="d-sm-flex justify-content-between">

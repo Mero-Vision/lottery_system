@@ -12,6 +12,7 @@ class Authenticate extends Middleware
      */
     protected function redirectTo(Request $request): ?string
     {
+        sweetalert()->addWarning('Sorry, you do not have the necessary permissions to access the system.');
         return $request->expectsJson() ? null : route('login');
     }
 }

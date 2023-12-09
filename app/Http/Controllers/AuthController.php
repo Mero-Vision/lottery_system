@@ -12,16 +12,15 @@ class AuthController extends Controller
         return view('login');
     }
 
-    public function forgotPasswordIndex(){
-        return view('forgot_password');
-    }
 
     public function login(LoginRequest $request){
         
         $credentials=$request->only('email','password');
 
         try{
-            if(Auth::attempt($credentials)){
+           
+            $remember=true;
+            if(Auth::attempt($credentials, $remember)){
                 $user=Auth::user();
                 sweetalert()->addSuccess('Welcome '.$user->name);
                 return redirect('admin/dashboard');
@@ -41,5 +40,25 @@ class AuthController extends Controller
 
         
         
+    }
+
+    public function logout(Request $request)
+    {
+        $user = $request->user();
+       
+        if ($user) {
+            auth()->logout();
+            Auth::logoutOtherDevices($user->id);
+        
+            $request->session()->invalidate();
+
+            $request->session()->regenerateToken();
+
+            sweetalert()->addSuccess('Logout Successfully!');
+            return redirect('/login');
+        } else {
+            sweetalert()->addSuccess('User is not authenticated!');
+            return redirect('/login');
+        }
     }
 }
