@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,12 +19,17 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',[HomeController::class,'index']);
 
-Route::get('/login',[AuthController::class,'index']);
+Route::get('/login',[AuthController::class,'index'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
 
-Route::get('/login/forgot-password', [AuthController::class, 'forgotPasswordIndex']);
+Route::get('/login/forgot-password', [ForgotPasswordController::class, 'index']);
+Route::post('/login/forgot-password', [ForgotPasswordController::class, 'forgotPassword']);
+Route::get('/reset_password', [ForgotPasswordController::class, 'resetPasswordIndex']);
+Route::post('/reset_password', [ForgotPasswordController::class, 'resetPassword']);
 
-Route::prefix('admin')->group(function () {
-    Route::get('/dashboard',[DashboardController::class,'index']);
+Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
+    Route::get('/dashboard', [DashboardController::class, 'index']);
+    Route::get('/logout', [AuthController::class, 'logout'])->middleware('auth.session');
+    
     
 });
