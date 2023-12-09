@@ -23,7 +23,8 @@ class AuthController extends Controller
         try{
             if(Auth::attempt($credentials)){
                 $user=Auth::user();
-                return back()->with('success','login success');
+                sweetalert()->addSuccess('Welcome '.$user->name);
+                return redirect('admin/dashboard');
                 
                 
             }else{
