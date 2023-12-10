@@ -169,7 +169,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn" data-dismiss="modal"><i class="flaticon-cancel-12"></i> Discard</button>
+                    <button class="btn" data-dismiss="modal"><i class="flaticon-cancel-12"></i> Close</button>
                     
                 </div>
             </div>
