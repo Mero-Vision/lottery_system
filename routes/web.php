@@ -37,6 +37,8 @@ Route::get('contact-us',[ContactController::class,'index']);
 
 Route::get('today-result', [ResultController::class, 'todayResultIndex']);
 
+Route::get('result/1-pm-result', [ResultController::class, 'onePmIndex']);
+
 Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
     
     Route::get('/dashboard', [DashboardController::class, 'index']);

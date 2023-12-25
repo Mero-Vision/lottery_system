@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Royal Japan | Today Result</title>
+    <title>Royal Japan | 1 PM Result</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
     @include('homeLayout.header')
@@ -24,9 +24,9 @@
 
                 <ol>
                     <li><a href="{{ url('/') }}">Home</a></li>
-                    <li>Today Results</li>
+                    <li>1 PM Lottery Results</li>
                 </ol>
-                <h2>Today Results</h2>
+                <h2>1 PM Lottery Results</h2>
 
             </div>
         </section><!-- End Breadcrumbs -->
@@ -45,30 +45,37 @@
             <div class="container" data-aos="fade-up">
 
                 <div class="section-title">
-                    <h2>🎉 **Lottery Results - <?php echo Date('Y'); ?>**🎉</h2>
+                    <h2>🎉 **Showing Lottery Results - 1 PM**🎉</h2>
                     <p>We are excited to announce the winning numbers for today's lottery draw. Check your
                         tickets carefully, and best of luck to all participants!</p>
                 </div>
+<br><br>
+                <div class="row text-center mt-5" data-aos="fade-up" data-aos-delay="100"
+                    style="max-width: 500px; margin: 0 auto;">
 
-                <div class="row text-center" data-aos="fade-up" data-aos-delay="100"
-                    style="max-width: 200px; margin: 0 auto;">
-                    <button class="btn btn-danger mt-2">1:00 PM</button><br>
-                    <button class="btn btn-danger mt-2">6:00 PM</button><br>
-                    <button class="btn btn-danger mt-2">8:00 PM</button><br>
+                    @forelse ($onepmdata as $data)
+                        <h5>Lottery Results for {{ \Carbon\Carbon::today()->format('F j, Y') }} - 1:00 PM Draw</h5>
+
+                        <img src="{{ $data->getFirstMediaUrl('lottery_image') }}" style="max-width: 500px;" class="mx-auto d-block img-fluid"/>
+
+                        <p class="mt-3">{!!$data->description!!}</p>
+                    @empty
+                        <img src="{{ url('assets/img/gif.gif') }}" style="max-width: 400px;"/>
+                    @endforelse
+                   
                 </div>
-                
-                <div>
-                    @foreach ($onepmdata as $data)
-                        <h1>{{ $data->lottery_name }}</h1>
-                    @endforeach
 
-                    @if ($onepmdata->isNotEmpty())
-                        @foreach ($onepmdata as $data)
-                            <img src="{{ $data->getFirstMediaUrl('lottery_image') }}" style="max-width: 200px;" />
-                        @endforeach
-                    @endif
+               
 
-                </div>
+
+
+                    
+
+
+
+
+
+               
 
 
 

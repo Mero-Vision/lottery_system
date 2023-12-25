@@ -34,7 +34,7 @@ class LotteryController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(LotteryCreateRequest $request)
+    public function store(Request $request)
     {
         try{
             $lottery=DB::transaction(function()use($request){

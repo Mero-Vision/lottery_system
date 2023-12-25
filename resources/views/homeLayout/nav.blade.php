@@ -6,8 +6,8 @@
 
         <nav id="navbar" class="navbar order-last order-lg-0">
             <ul>
-                <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-                <li><a class="nav-link scrollto" href="">1:00 PM Results</a></li>
+                <li><a class="nav-link scrollto {{ request()->is('/') ? 'active' : '' }}" href="{{url('/')}}">Home</a></li>
+                <li><a class="nav-link scrollto {{ request()->is('result/1-pm-result') ? 'active' : '' }}" href="{{url('result/1-pm-result')}}">1:00 PM Results</a></li>
                 <li><a class="nav-link scrollto" href="">6:00 PM Results</a></li>
                 <li><a class="nav-link scrollto" href="">8:00 PM Results</a></li>
                 <li><a class="nav-link scrollto" href="{{url('today-result')}}">Today Results</a></li>
