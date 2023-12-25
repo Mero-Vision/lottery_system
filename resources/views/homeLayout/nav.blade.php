@@ -10,7 +10,7 @@
                 <li><a class="nav-link scrollto" href="">1:00 PM Results</a></li>
                 <li><a class="nav-link scrollto" href="">6:00 PM Results</a></li>
                 <li><a class="nav-link scrollto" href="">8:00 PM Results</a></li>
-                <li><a class="nav-link scrollto" href="#services">Today Results</a></li>
+                <li><a class="nav-link scrollto" href="{{url('today-result')}}">Today Results</a></li>
                 <li><a class="nav-link scrollto" href="#services">Old Results</a></li>
                 <li><a class="nav-link scrollto" href="{{url('contact-us')}}">Contact</a></li>
             </ul>

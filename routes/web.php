@@ -7,6 +7,7 @@ use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LotteryController;
 use App\Http\Controllers\LotteryTimeController;
+use App\Http\Controllers\ResultController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -33,6 +34,8 @@ Route::post('/reset_password', [ForgotPasswordController::class, 'resetPassword'
 
 
 Route::get('contact-us',[ContactController::class,'index']);
+
+Route::get('today-result', [ResultController::class, 'todayResultIndex']);
 
 Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
     
