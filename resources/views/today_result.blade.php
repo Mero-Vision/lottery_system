@@ -52,7 +52,7 @@
 
                 <div class="row text-center" data-aos="fade-up" data-aos-delay="100"
                     style="max-width: 200px; margin: 0 auto;">
-                    <button class="btn btn-danger mt-2">1:00 PM</button><br>
+                    <a class="btn btn-danger mt-2" href="{{url('result/1-pm-result')}}">1:00 PM</a><br>
                     <button class="btn btn-danger mt-2">6:00 PM</button><br>
                     <button class="btn btn-danger mt-2">8:00 PM</button><br>
                 </div>
