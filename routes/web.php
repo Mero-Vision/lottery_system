@@ -44,6 +44,7 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
 
     Route::get('/lottery/view',[LotteryController::class,'index']);
     Route::get('/lottery/create', [LotteryController::class, 'createLotteryIndex']);
+    Route::post('/lottery/create', [LotteryController::class, 'store']);
     Route::get('/lottery/data', [LotteryController::class, 'lotteryDataAjax']);
     
     

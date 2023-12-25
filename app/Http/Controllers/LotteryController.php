@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Lottery\LotteryCreateRequest;
 use App\Models\Lottery;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class LotteryController extends Controller
 {
@@ -32,9 +34,33 @@ class LotteryController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(LotteryCreateRequest $request)
     {
-        //
+        try{
+            $lottery=DB::transaction(function()use($request){
+                $lottery=Lottery::create([
+                    'user_id'=>auth()->user()->id,
+                    'lottery_name'=>$request->lottery_name,
+                    'date'=>$request->date,
+                    'time'=>$request->time,
+                    'description'=>$request->description,
+                    
+                ]);
+                if($request->lottery_image){
+                    $lottery->addMedia($request->lottery_image)->toMediaCollection('lottery_image');
+                }
+                return $lottery;
+                
+            });
+            if($lottery){
+                return back()->with('success','Lottery created successfully!');
+            }
+            
+        }
+        catch(\Exception $e){
+            return back()->with('error',$e->getMessage());
+            
+        }
     }
 
     /**

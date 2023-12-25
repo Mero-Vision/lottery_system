@@ -77,55 +77,62 @@
         <div id="content" class="main-content">
 
 
-
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <label for="name" class="form-label">Lottery Name:</label>
-                        <input type="text" class="form-control" id="name" placeholder="Enter lottery name"
-                            name="lottery_name">
-                    </div>
-                    <div class="col-md-6">
-                        <label for="email" class="form-label">Date:</label>
-                        <input type="date" class="form-control" id="date" placeholder="Enter date"
-                            name="date">
-                    </div>
-                </div>
-
-                <div class="row mt-3">
-                    <div class="col-md-6">
-                        <label for="mobile no" class="form-label">Time:</label>
-                        <input type="text" class="form-control" id="mobile" placeholder="Enter mobile no"
-                            name="time">
+            <form action="{{url('admin/lottery/create')}}" method="post" enctype="multipart/form-data">
+                @csrf
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="name" class="form-label">Lottery Name:</label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter lottery name"
+                                name="lottery_name">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="email" class="form-label">Date:</label>
+                            <input type="date" class="form-control" id="date" placeholder="Enter date"
+                                name="date">
+                        </div>
                     </div>
 
-                </div>
+                    <div class="row mt-3">
+                        <div class="col-md-6">
+                            <label for="mobile no" class="form-label">Time:</label>
+                            <input type="text" class="form-control" id="mobile" placeholder="Enter time"
+                                name="time">
+                        </div>
 
-                <div class="row mt-3">
-                    <div class="col-md-12">
-                        <label for="description" class="form-label">Description:</label>
-                        <input id="x" type="hidden" name="content">
-                        <trix-editor input="x" style="min-height: 140px;"></trix-editor>
                     </div>
 
+                    <div class="row mt-3">
+                        <div class="col-md-12">
+                            <label for="description" class="form-label">Description:</label>
+                            <input id="x" type="hidden" name="description">
+                            <trix-editor input="x" style="min-height: 140px;"></trix-editor>
+                        </div>
+
+                    </div>
+
+                    <div class="custom-file-container mt-3" data-upload-id="myFirstImage">
+                        <label>Upload (Single File) <a href="javascript:void(0)"
+                                class="custom-file-container__image-clear" title="Clear Image">x</a></label>
+                        <label class="custom-file-container__custom-file">
+                            <input type="file" class="custom-file-container__custom-file__custom-file-input"
+                                accept="image/*" name="lottery_image">
+                            <input type="hidden" name="MAX_FILE_SIZE" />
+                            <span class="custom-file-container__custom-file__custom-file-control"></span>
+                        </label>
+                        <div class="custom-file-container__image-preview"></div>
+                        @error('lottery_image')
+                        <span class="text-danger">{{$message}}</span>
+                            
+                        @enderror
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+
+
                 </div>
-
-                <div class="custom-file-container mt-3" data-upload-id="myFirstImage">
-                    <label>Upload (Single File) <a href="javascript:void(0)" class="custom-file-container__image-clear"
-                            title="Clear Image">x</a></label>
-                    <label class="custom-file-container__custom-file">
-                        <input type="file" class="custom-file-container__custom-file__custom-file-input"
-                            accept="image/*">
-                        <input type="hidden" name="MAX_FILE_SIZE" value="10485760" />
-                        <span class="custom-file-container__custom-file__custom-file-control"></span>
-                    </label>
-                    <div class="custom-file-container__image-preview"></div>
-                </div>
-
-                <button type="button" class="btn btn-primary">Submit</button>
-
-
-            </div><br>
+            </form>
+            <br>
 
 
 
@@ -137,7 +144,7 @@
     <!-- END MAIN CONTAINER -->
 
 
-    
+
 
     <script type="text/javascript" src="{{ url('assets/js/file-upload-with-preview.min.js') }}"></script>
     <script>
