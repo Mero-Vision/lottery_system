@@ -87,6 +87,7 @@
                                 <th>Lottery Name</th>
                                  <th>Date</th>
                                   <th>Time</th>
+                                  <th>Action</th>
 
                             </tr>
                         </thead>
@@ -138,6 +139,13 @@
                      {
                         "data": "time"
                     },
+                    {
+                        data: null,
+                        render: function(data, type, row) {
+                            return '<button class="btn btn-danger btn-sm" onclick="deleteAccess(' +
+                                row.id + ')">Delete</button> <button class="btn btn-primary btn-sm" onclick="viewData(' + row.id + ')">View</button>';
+                        }
+                    }
 
                 ],
                 order: [
@@ -167,7 +175,41 @@
                 ]
             });
         });
+
+
+         function deleteAccess(id) {
+            if (confirm('Are you sure you want to delete this lottery data?')) {
+                $.ajax({
+                    url: '/admin/lottery/delete/' + id,
+                    type: 'GET',
+                    data: {
+                        _method: 'DELETE'
+                    },
+                    success: function(response) {
+                        if (response.status === 'success') {
+
+                            $('#table_data').DataTable().ajax.reload();
+                        } else {
+
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(xhr.responseText);
+                    }
+                });
+            }
+        }
     </script>
+
+     <script>
+    function viewData(id) {
+        var baseUrl = '{{ url("admin/lottery/data") }}';
+        var url = baseUrl + '/' + id;
+
+        // Redirect to the constructed URL
+        window.location.href = url;
+    }
+</script>
 
     @include('adminLayouts/adminfooter')
 

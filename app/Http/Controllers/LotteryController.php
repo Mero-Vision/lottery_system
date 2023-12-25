@@ -68,7 +68,12 @@ class LotteryController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $user = User::with('media')->where('id', auth()->user()->id)->first();
+        $lottery=Lottery::find($id);
+        if(!$lottery){
+            return back()->with('error','Lottery data not found!');
+        }
+        return view('admin.lottery.view_lottery',compact('lottery','user'));
     }
 
     /**
@@ -84,6 +89,19 @@ class LotteryController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $lottery = Lottery::find($id);
+
+        if ($lottery) {
+            $lottery->delete();
+            $lottery->clearMediaCollection('lottery_image');
+            return response()->json(['status' => 'success', 'message' => 'Lottery deleted successfully.']);
+        } else {
+            return response()->json(['status' => 'error', 'message' => 'Lottery Not Found!']);
+        }
     }
+
+   
+    
+       
+    
 }
