@@ -65,7 +65,7 @@
                         <img src="{{ $data->getFirstMediaUrl('lottery_image') }}" style="max-width: 500px;"
                             class="mx-auto d-block img-fluid" />
 
-                        <p class="mt-3">{!! $data->description !!}</p>
+                       
                     @empty
                     <h5>Lottery Results for {{ \Carbon\Carbon::today()->format('F j, Y') }} - 1:00 PM Draw</h5>
                         <img src="{{ url('assets/img/gif.gif') }}" style="max-width: 300px;" class="mx-auto d-block img-fluid"/>
@@ -81,7 +81,7 @@
                         <img src="{{ $data->getFirstMediaUrl('lottery_image') }}" style="max-width: 500px;"
                             class="mx-auto d-block img-fluid" />
 
-                        <p class="mt-3">{!! $data->description !!}</p>
+                       
                     @empty
                     <h5>Lottery Results for {{ \Carbon\Carbon::today()->format('F j, Y') }} - 6:00 PM Draw</h5>
                         <img src="{{ url('assets/img/gif.gif') }}" style="max-width: 300px;" class="mx-auto d-block img-fluid"/>
@@ -96,7 +96,7 @@
                         <img src="{{ $data->getFirstMediaUrl('lottery_image') }}" style="max-width: 500px;"
                             class="mx-auto d-block img-fluid" />
 
-                        <p class="mt-3">{!! $data->description !!}</p>
+                        
                     @empty
                     <h5>Lottery Results for {{ \Carbon\Carbon::today()->format('F j, Y') }} - 8:00 PM Draw</h5>
                         <img src="{{ url('assets/img/gif.gif') }}" style="max-width: 300px;" class="mx-auto d-block img-fluid"/>

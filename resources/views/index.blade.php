@@ -31,9 +31,22 @@
 
     <main id="main">
 
-        
 
-        
+        <div class="section-title mt-5">
+            <h2>🎉 **Lottery Results - <?php echo Date('Y'); ?>**🎉</h2>
+            <p>We are excited to announce the winning numbers for today's lottery draw. Check your
+                tickets carefully, and best of luck to all participants!</p>
+        </div>
+
+        <div class="row text-center" data-aos="fade-up" data-aos-delay="100" style="max-width: 200px; margin: 0 auto;">
+            <a class="btn btn-danger mt-2" href="{{ url('result/1-pm-result') }}">1:00 PM</a><br>
+            <a class="btn btn-danger mt-2" href="{{ url('result/6-pm-result') }}">6:00 PM</a><br>
+            <a class="btn btn-danger mt-2" href="{{ url('result/8-pm-result') }}">8:00 PM</a><br>
+        </div>
+
+
+
+
 
         <!-- ======= Counts Section ======= -->
         <section id="counts" class="counts">
@@ -46,24 +59,24 @@
                             <i class="bi bi-emoji-smile"></i>
                             <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1"
                                 class="purecounter"></span>
-                            <p>Happy Clients</p>
+                            <p>Total Lottery</p>
                         </div>
                     </div>
 
                     <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
                         <div class="count-box">
                             <i class="bi bi-journal-richtext"></i>
-                            <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1"
+                            <span data-purecounter-start="0" data-purecounter-end="200" data-purecounter-duration="1"
                                 class="purecounter"></span>
-                            <p>Projects</p>
+                            <p>Winner</p>
                         </div>
                     </div>
 
                     <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
                         <div class="count-box">
                             <i class="bi bi-headset"></i>
-                            <span data-purecounter-start="0" data-purecounter-end="1463"
-                                data-purecounter-duration="1" class="purecounter"></span>
+                            <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1"
+                                class="purecounter"></span>
                             <p>Hours Of Support</p>
                         </div>
                     </div>
@@ -71,9 +84,9 @@
                     <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
                         <div class="count-box">
                             <i class="bi bi-people"></i>
-                            <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1"
+                            <span data-purecounter-start="0" data-purecounter-end="2" data-purecounter-duration="1"
                                 class="purecounter"></span>
-                            <p>Hard Workers</p>
+                            <p>Admin</p>
                         </div>
                     </div>
 
@@ -315,7 +328,7 @@
 
 
 
-      
+
 
 
 
@@ -417,13 +430,13 @@
             </div>
         </section><!-- End Frequently Asked Questions Section -->
 
-      
 
-      
+
+
 
     </main><!-- End #main -->
 
-@include('homeLayout.footer')
+    @include('homeLayout.footer')
 
 </body>
 
