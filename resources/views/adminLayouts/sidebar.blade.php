@@ -25,7 +25,7 @@
 
 
              <li class="menu">
-                 <a href="#app" data-toggle="collapse" data-active="{{ request()->is('admin/apps*') ? 'true' : '' }}"
+                 <a href="#app" data-toggle="collapse" data-active="{{ request()->is('admin/lottery*') ? 'true' : '' }}"
                      aria-expanded="false" class="dropdown-toggle">
                      <div class="">
                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -54,8 +54,12 @@
                  </a>
                  <ul class="collapse submenu list-unstyled" id="app" data-parent="#accordionExample">
 
-                     <li class="{{ request()->is('admin/apps/contacts') ? 'active' : '' }}">
-                         <a href="{{ url('/admin/apps/contacts') }}">Contacts </a>
+                     <li class="{{ request()->is('/admin/lottery-time') ? 'active' : '' }}">
+                         <a href="{{ url('/admin/lottery/lottery-time') }}">Lottery Time </a>
+                     </li>
+
+                      <li class="{{ request()->is('/admin/lottery/view') ? 'active' : '' }}">
+                         <a href="{{ url('/admin/lottery/view') }}">Lottery </a>
                      </li>
 
                  </ul>
@@ -112,7 +116,7 @@
                      <li class="{{ request()->is('admin/users') ? 'active' : '' }}">
                          <a href="{{ url('admin/users') }}"> Users Management </a>
                      </li>
-                     
+
                  </ul>
              </li>
 
