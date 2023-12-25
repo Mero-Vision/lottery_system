@@ -9,7 +9,7 @@ use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 
-class Lottery extends Model implements HasMedia
+class Lottery extends BaseModel implements HasMedia
 {
     use HasFactory;
     use InteractsWithMedia;
