@@ -52,22 +52,55 @@
 
                 <div class="row text-center" data-aos="fade-up" data-aos-delay="100"
                     style="max-width: 200px; margin: 0 auto;">
-                    <a class="btn btn-danger mt-2" href="{{url('result/1-pm-result')}}">1:00 PM</a><br>
-                    <button class="btn btn-danger mt-2">6:00 PM</button><br>
-                    <button class="btn btn-danger mt-2">8:00 PM</button><br>
+                    <a class="btn btn-danger mt-2" href="{{ url('result/1-pm-result') }}">1:00 PM</a><br>
+                    <a class="btn btn-danger mt-2" href="{{ url('result/6-pm-result') }}">6:00 PM</a><br>
+                    <a class="btn btn-danger mt-2" href="{{ url('result/8-pm-result') }}">8:00 PM</a><br>
                 </div>
-                
-                <div>
-                    @foreach ($onepmdata as $data)
-                        <h1>{{ $data->lottery_name }}</h1>
-                    @endforeach
 
-                    @if ($onepmdata->isNotEmpty())
-                        @foreach ($onepmdata as $data)
-                            <img src="{{ $data->getFirstMediaUrl('lottery_image') }}" style="max-width: 200px;" />
-                        @endforeach
-                    @endif
+                <div class="row text-center mt-4" data-aos="fade-up" data-aos-delay="100"
+                    style="max-width: 500px; margin: 0 auto;">
+                    @forelse ($onepmdata as $data)
+                        <h5>Lottery Results for {{ \Carbon\Carbon::today()->format('F j, Y') }} - 1:00 PM Draw</h5>
 
+                        <img src="{{ $data->getFirstMediaUrl('lottery_image') }}" style="max-width: 500px;"
+                            class="mx-auto d-block img-fluid" />
+
+                        <p class="mt-3">{!! $data->description !!}</p>
+                    @empty
+                    <h5>Lottery Results for {{ \Carbon\Carbon::today()->format('F j, Y') }} - 1:00 PM Draw</h5>
+                        <img src="{{ url('assets/img/gif.gif') }}" style="max-width: 300px;" class="mx-auto d-block img-fluid"/>
+                    @endforelse
+                </div>
+
+
+                <div class="row text-center mt-4" data-aos="fade-up" data-aos-delay="100"
+                    style="max-width: 500px; margin: 0 auto;">
+                    @forelse ($sixpmdata as $data)
+                        <h5>Lottery Results for {{ \Carbon\Carbon::today()->format('F j, Y') }} - 6:00 PM Draw</h5>
+
+                        <img src="{{ $data->getFirstMediaUrl('lottery_image') }}" style="max-width: 500px;"
+                            class="mx-auto d-block img-fluid" />
+
+                        <p class="mt-3">{!! $data->description !!}</p>
+                    @empty
+                    <h5>Lottery Results for {{ \Carbon\Carbon::today()->format('F j, Y') }} - 6:00 PM Draw</h5>
+                        <img src="{{ url('assets/img/gif.gif') }}" style="max-width: 300px;" class="mx-auto d-block img-fluid"/>
+                    @endforelse
+                </div>
+
+                <div class="row text-center mt-4" data-aos="fade-up" data-aos-delay="100"
+                    style="max-width: 500px; margin: 0 auto;">
+                    @forelse ($eightpmdata as $data)
+                        <h5>Lottery Results for {{ \Carbon\Carbon::today()->format('F j, Y') }} - 8:00 PM Draw</h5>
+
+                        <img src="{{ $data->getFirstMediaUrl('lottery_image') }}" style="max-width: 500px;"
+                            class="mx-auto d-block img-fluid" />
+
+                        <p class="mt-3">{!! $data->description !!}</p>
+                    @empty
+                    <h5>Lottery Results for {{ \Carbon\Carbon::today()->format('F j, Y') }} - 8:00 PM Draw</h5>
+                        <img src="{{ url('assets/img/gif.gif') }}" style="max-width: 300px;" class="mx-auto d-block img-fluid"/>
+                    @endforelse
                 </div>
 
 

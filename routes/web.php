@@ -38,6 +38,8 @@ Route::get('contact-us',[ContactController::class,'index']);
 Route::get('today-result', [ResultController::class, 'todayResultIndex']);
 
 Route::get('result/1-pm-result', [ResultController::class, 'onePmIndex']);
+Route::get('result/6-pm-result', [ResultController::class, 'sixPmIndex']);
+Route::get('result/8-pm-result', [ResultController::class, 'eightPmIndex']);
 
 Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
     
