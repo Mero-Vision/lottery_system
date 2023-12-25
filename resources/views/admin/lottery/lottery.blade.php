@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
     <title>Lottery View</title>
+
     @include('adminLayouts/adminheader')
 
 </head>
@@ -73,9 +74,9 @@
             <div class="container">
 
                 <!-- Button to Open the Modal -->
-                <button type="button" class="btn btn-primary mb-3" data-toggle="modal" data-target="#userCreateModel">
-                    Create Time
-                </button>
+                <a href="{{url('admin/lottery/create')}}" class="btn btn-primary mb-3">
+                    Create Lottery
+                </a>
                 <div class="container table-responsive">
 
 
@@ -83,7 +84,9 @@
                         <thead class="">
                             <tr>
                                 <th>ID</th>
-                                <th>Lottery Time</th>
+                                <th>Lottery Name</th>
+                                 <th>Date</th>
+                                  <th>Time</th>
 
                             </tr>
                         </thead>
@@ -97,9 +100,6 @@
 
 
 
-
-
-
         </div>
         <!--  END CONTENT AREA  -->
 
@@ -109,49 +109,14 @@
 
 
 
-    <div class="modal fade" id="userCreateModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Create Lottery Time</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+ 
 
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form action="{{url('admin/lottery-time')}}" method="post">
-                        @csrf
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <label for="name" class="form-label">Lottery Time:</label>
-                                    <input type="time" class="form-control" id="lottery_time"
-                                        placeholder="Enter lottery time" name="lottery_time" value="13:30">
-                                </div>
-
-                            </div>
-
-                            <br>
-                            <button type="submit" class="btn btn-primary">Submit</button>
-
-
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button class="btn" data-dismiss="modal"><i class="flaticon-cancel-12"></i> Close</button>
-
-                </div>
-            </div>
-        </div>
-    </div>
 
     <script>
         $(document).ready(function() {
             $('#table_data').DataTable({
                 ajax: {
-                    url: '/admin/lottery-time/data',
+                    url: '/admin/lottery/data',
                     type: 'GET',
                     dataType: 'json',
                     processing: true,
@@ -165,7 +130,13 @@
                         "data": "id"
                     },
                     {
-                        "data": "lottery_time"
+                        "data": "lottery_name"
+                    },
+                     {
+                        "data": "date"
+                    },
+                     {
+                        "data": "time"
                     },
 
                 ],
