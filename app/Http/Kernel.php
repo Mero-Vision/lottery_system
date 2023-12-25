@@ -14,6 +14,14 @@ class Kernel extends HttpKernel
      * @var array<int, class-string|string>
      */
     protected $middleware = [
+        // Middleware to minify html
+        \Fahlisaputra\Minify\Middleware\MinifyCss::class,
+        // Middleware to minify css
+        \Fahlisaputra\Minify\Middleware\MinifyJavascript::class,
+        // Middleware to minify javascript
+        \Fahlisaputra\Minify\Middleware\MinifyHtml::class,
+
+        
         // \App\Http\Middleware\TrustHosts::class,
         \App\Http\Middleware\TrustProxies::class,
         \Illuminate\Http\Middleware\HandleCors::class,
