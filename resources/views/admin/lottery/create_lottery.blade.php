@@ -85,19 +85,31 @@
                             <label for="name" class="form-label">Lottery Name:</label>
                             <input type="text" class="form-control" id="name" placeholder="Enter lottery name"
                                 name="lottery_name">
+                                @error('lottery_name')
+                                <span class="text-danger">{{$message}}</span>
+                                    
+                                @enderror
                         </div>
                         <div class="col-md-6">
                             <label for="email" class="form-label">Date:</label>
                             <input type="date" class="form-control" id="date" placeholder="Enter date"
                                 name="date">
+                                @error('date')
+                                <span class="text-danger">{{$message}}</span>
+                                    
+                                @enderror
                         </div>
                     </div>
 
                     <div class="row mt-3">
                         <div class="col-md-6">
                             <label for="mobile no" class="form-label">Time:</label>
-                            <input type="text" class="form-control" id="mobile" placeholder="Enter time"
+                            <input type="text" class="form-control" id="mobile" placeholder="Eg: 1:00 PM"
                                 name="time">
+                                @error('time')
+                                <span class="text-danger">{{$message}}</span>
+                                    
+                                @enderror
                         </div>
 
                     </div>
@@ -108,6 +120,10 @@
                             <input id="x" type="hidden" name="description">
                             <trix-editor input="x" style="min-height: 140px;"></trix-editor>
                         </div>
+                        @error('description')
+                                <span class="text-danger">{{$message}}</span>
+                                    
+                                @enderror
 
                     </div>
 

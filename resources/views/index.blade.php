@@ -22,7 +22,7 @@
                 <div class="col-xl-6">
                     <h1>Dare to Dream, Play to Win!</h1>
                     <h2>Unlock Your Fortune, One Ticket at a Time!</h2>
-                    <a href="#about" class="btn-get-started scrollto">See Results</a>
+                    <a href="{{url('today-result')}}" class="btn-get-started scrollto">See Results</a>
                 </div>
             </div>
         </div>

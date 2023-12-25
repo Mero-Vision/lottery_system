@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Lottery;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class LotteryCreateRequest extends FormRequest
 {
@@ -22,7 +23,11 @@ class LotteryCreateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'lottery_image'=>['required']
+            'lottery_name'=>['required'],
+            'lottery_image'=>['required','image'],
+            'time'=>['required',Rule::in('1:00 PM','6:00 PM','8:00 PM')],
+            'date'=>['required'],
+            'description'=>['required']
         ];
     }
 }
