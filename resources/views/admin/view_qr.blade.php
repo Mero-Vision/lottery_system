@@ -5,13 +5,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
-    <title>Dashboard</title>
+    <title>View QR</title>
     @include('adminLayouts/adminheader')
 
 </head>
 
 <body>
-    
+
     <!-- BEGIN LOADER -->
     <div id="load_screen">
         <div class="loader">
@@ -71,18 +71,51 @@
 
 
 
+            <div class="container">
+                <div class="card component-card_2">
 
 
-           
+                    <div class="visible-print text-center m-5" id="qrcode-container">
+                        {!! QrCode::size(200)->generate(Request::url()) !!}
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Scan above qr</h5>
+                        <h5 class="text-center"><button class="btn btn-primary text-center" onclick="printQR()">Print</button></h5>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+
+
+
+
+
 
         </div>
         <!--  END CONTENT AREA  -->
 
     </div>
     <!-- END MAIN CONTAINER -->
+<script>
+    function printQR() {
+       var divContents = document.getElementById("qrcode-container").innerHTML; 
+            var a = window.open('', '', 'height=1200, width=1000'); 
+            a.document.write('<html>'); 
+            a.document.write('<body > <h1>Print application QR</h1> <br>'); 
+            a.document.write(divContents); 
+            a.document.write('</body></html>'); 
+            a.document.close(); 
+            a.print(); 
+    }
+</script>
+
+    @include('adminLayouts/adminfooter')
 
 
-     @include('adminLayouts/adminfooter')
 
 </body>
 

@@ -15,6 +15,7 @@
         "laravel/tinker": "^2.8",
         "php-flasher/flasher-laravel": "^1.15",
         "php-flasher/flasher-sweetalert-laravel": "^1.15",
+        "simplesoftwareio/simple-qrcode": "^4.2",
         "spatie/laravel-medialibrary": "^10.15",
         "spatie/laravel-permission": "^6.2",
         "spatie/laravel-sluggable": "^3.5"

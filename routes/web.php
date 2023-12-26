@@ -7,6 +7,7 @@ use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LotteryController;
 use App\Http\Controllers\LotteryTimeController;
+use App\Http\Controllers\QRController;
 use App\Http\Controllers\ResultController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -58,6 +59,8 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
     Route::get('/lottery/data', [LotteryController::class, 'lotteryDataAjax']);
     Route::get('/lottery/data/{id}', [LotteryController::class, 'show']);
     Route::get('/lottery/delete/{id}', [LotteryController::class, 'destroy']);
+
+    Route::get('/view-qr',[QRController::class,'index']);
     
     
 });
