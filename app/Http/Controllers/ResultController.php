@@ -20,10 +20,15 @@ class ResultController extends Controller
         ->where('date', '>=', $currentDate)
             ->get();
 
-        $sixpmdata = Lottery::with('media')
-            ->where('time', '=', "6:00 PM")
-            ->where('date', '>=', $currentDate)
-            ->get();
+        $currentTime = Carbon::now()->format('h:i A');
+        if (strtotime($currentTime) >= strtotime("6:00 PM")) {
+            $sixpmdata = Lottery::with('media')
+                ->where('time', '=', "6:00 PM")
+                ->where('date', '=', $currentDate)
+                ->get();
+        } else {
+            $sixpmdata = [];
+        }
 
 
         $eightpmdata = Lottery::with('media')
@@ -57,8 +62,6 @@ class ResultController extends Controller
         // dd($currentDate);
 
         $currentTime = Carbon::now()->format('h:i A');
-
-        // Check if the current time is after 6:00 PM
         if (strtotime($currentTime) >= strtotime("6:00 PM")) {
             $sixpmdata = Lottery::with('media')
                 ->where('time', '=', "6:00 PM")
