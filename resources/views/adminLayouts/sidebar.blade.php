@@ -163,9 +163,7 @@
                      <li class="{{ request()->is('admin/profile') ? 'active' : '' }}">
                          <a href="{{ url('admin/profile') }}"> Profile </a>
                      </li>
-                     <li class="{{ request()->is('admin/profile/account-setting') ? 'active' : '' }}">
-                         <a href="{{ url('/admin/profile/account-setting') }}">Account Settings </a>
-                     </li>
+                    
                  </ul>
              </li>
 
