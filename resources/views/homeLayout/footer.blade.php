@@ -52,9 +52,9 @@
                 <div class="copyright">
                     &copy; Copyright <strong><span>Tech Revo</span></strong>. All Rights Reserved
                 </div>
-                <div class="credits">
+                {{-- <div class="credits">
                     Designed by <a href="#">Hancie Phago and Nitesh Hamal</a>
-                </div>
+                </div> --}}
             </div>
             <div class="social-links text-center text-md-end pt-3 pt-md-0">
                 <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
