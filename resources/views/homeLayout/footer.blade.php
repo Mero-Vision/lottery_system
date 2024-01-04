@@ -6,7 +6,7 @@
                 <div class="row">
 
                     <div class="col-lg-3 col-md-6 footer-contact">
-                        <h3>Royal Japan<span>.</span></h3>
+                        <h3>Royal Lucky 10<span>.</span></h3>
                         <p>
                             State of Punjab<br>
                             India<br><br>
