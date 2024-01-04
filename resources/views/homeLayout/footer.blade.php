@@ -8,7 +8,8 @@
                     <div class="col-lg-3 col-md-6 footer-contact">
                         <h3>Royal Japan<span>.</span></h3>
                         <p>
-                            Punjab State<br>
+                            State of Punjab<br>
+                            India<br><br>
                           
                             <strong>Phone:</strong> +1 5589 55488 55<br>
                             <strong>Email:</strong> info@example.com<br>
