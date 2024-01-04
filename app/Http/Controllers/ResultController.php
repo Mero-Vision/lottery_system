@@ -54,11 +54,21 @@ class ResultController extends Controller
     public function sixPmIndex(){
 
         $currentDate = Carbon::today()->format('Y-m-d');
+        // dd($currentDate);
 
-        $sixpmdata = Lottery::with('media')
-            ->where('time', '=', "6:00 PM")
-            ->where('date', '>=', $currentDate)
-            ->get();
+        $currentTime = Carbon::now()->format('h:i A');
+
+        // Check if the current time is after 6:00 PM
+        if (strtotime($currentTime) >= strtotime("6:00 PM")) {
+            $sixpmdata = Lottery::with('media')
+                ->where('time', '=', "6:00 PM")
+                ->where('date', '=', $currentDate)
+                ->get();
+        }
+        else {
+            $sixpmdata=[];
+        }
+       
 
             
         return view('sixpm_result', compact('sixpmdata'));

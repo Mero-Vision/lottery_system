@@ -1,9 +1,7 @@
 <!-- ======= Header ======= -->
 <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center">
-        <h1 class="logo me-auto"><a href="{{ url('/') }}">Royal Lucky 10 <?php
-echo date('Y-m-d h:i:s A');
-?><span>.</span></a></h1>
+        <h1 class="logo me-auto"><a href="{{ url('/') }}">Royal Lucky 10<span>.</span></a></h1>
 
 
         <nav id="navbar" class="navbar order-last order-lg-0">

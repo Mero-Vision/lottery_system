@@ -22,7 +22,7 @@
                 <div class="col-xl-6">
                     <h1>Dare to Dream, Play to Win!</h1>
                     <h2>Unlock Your Fortune, One Ticket at a Time!</h2>
-                    <a href="{{url('today-result')}}" class="btn-get-started scrollto">See Results</a>
+                    <a href="{{ url('today-result') }}" class="btn-get-started scrollto" id="currentTime">Time</a>
                 </div>
             </div>
         </div>
@@ -230,6 +230,23 @@
     </main><!-- End #main -->
 
     @include('homeLayout.footer')
+
+    <script>
+        function updateCurrentTime() {
+            var currentTimeElement = document.getElementById('currentTime');
+            var currentDate = new Date();
+            var hours = currentDate.getHours().toString().padStart(2, '0');
+            var minutes = currentDate.getMinutes().toString().padStart(2, '0');
+            var seconds = currentDate.getSeconds().toString().padStart(2, '0');
+            var ampm = hours >= 12 ? 'PM' : 'AM';
+            hours = (hours % 12) || 12;
+            currentTimeElement.textContent = hours + ':' + minutes + ':' + seconds + ' ' + ampm;
+            setTimeout(updateCurrentTime, 1000);
+        }
+
+
+        updateCurrentTime();
+    </script>
 
 </body>
 
