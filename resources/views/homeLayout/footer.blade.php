@@ -5,7 +5,7 @@
             <div class="container">
                 <div class="row">
 
-                    <div class="col-lg-3 col-md-6 footer-contact">
+                    <div class="col-lg-4 col-md-6 footer-contact">
                         <h3>Royal Lucky 10<span>.</span></h3>
                         <p>
                             State of Punjab<br>
@@ -25,17 +25,16 @@
                         </ul>
                     </div>
 
-                    <div class="col-lg-3 col-md-6 footer-links">
+                    <div class="col-lg-2 col-md-6 footer-links">
                         <h4>Our Services</h4>
                         <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Lottery</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Buy Tickets</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="{{url('/')}}">Lottery</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a href="{{ url('today-result') }}">View Results</a>
                             </li>
                         </ul>
                     </div>
 
-                    <div class="col-lg-4 col-md-4 footer-newsletter">
+                    <div class="col-lg-3 col-md-4 footer-newsletter">
                         <h3>Royal Lucky 10<span>.</span></h3>
                         <img src="{{ url('assets/img/lottery_image.webp') }}" class="img-fluid"
                             style="max-width:150px" />
