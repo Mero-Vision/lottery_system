@@ -10,17 +10,22 @@ use Illuminate\Http\Request;
 class ResultController extends Controller
 {
     public function todayResultIndex(){
-        $currentTime = Carbon::now();
-        $formattedTime = $currentTime->format('g:i A');
+       
 
         $currentDate = Carbon::today()->format('Y-m-d');
 
+        $currentTime = Carbon::now()->format('h:i A');
+
+        if (strtotime($currentTime) >= strtotime("1:00 PM")) {
         $onepmdata = Lottery::with('media')
         ->where('time', '=', "1:00 PM")
         ->where('date', '>=', $currentDate)
             ->get();
+        } else {
+            $onepmdata = [];
+        }
 
-        $currentTime = Carbon::now()->format('h:i A');
+       
         if (strtotime($currentTime) >= strtotime("6:00 PM")) {
             $sixpmdata = Lottery::with('media')
                 ->where('time', '=', "6:00 PM")
@@ -30,11 +35,15 @@ class ResultController extends Controller
             $sixpmdata = [];
         }
 
-
+        if (strtotime($currentTime) >= strtotime("8:00 PM")) {
         $eightpmdata = Lottery::with('media')
         ->where('time', '=', "8:00 PM")
         ->where('date', '>=', $currentDate)
             ->get();
+
+        } else {
+            $eightpmdata = [];
+        }
 
         
 

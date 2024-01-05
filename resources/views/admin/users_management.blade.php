@@ -87,7 +87,7 @@
                                 <th>Email</th>
                                 <th>Mobile No</th>
                                 <th>Address</th>
-                                <th>Action</th>
+                                {{-- <th>Action</th> --}}
 
 
 
@@ -207,15 +207,15 @@
                     {
                         "data": "address"
                     },
-                    {
-                        data: null,
-                        render: function(data, type, row) {
-                            return '<button class="btn btn-danger btn-sm" onclick="deleteAccess(' +
-                                row.id +
-                                ')">Delete</button> <button class="btn btn-success btn-sm" onclick="deleteAccess(' +
-                                row.id + ')">Edit</button>';
-                        }
-                    }
+                    // {
+                    //     data: null,
+                    //     render: function(data, type, row) {
+                    //         return '<button class="btn btn-danger btn-sm" onclick="deleteAccess(' +
+                    //             row.id +
+                    //             ')">Delete</button> <button class="btn btn-success btn-sm" onclick="deleteAccess(' +
+                    //             row.id + ')">Edit</button>';
+                    //     }
+                    // }
 
                 ],
                 order: [
