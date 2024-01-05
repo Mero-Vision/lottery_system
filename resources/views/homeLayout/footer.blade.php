@@ -54,7 +54,7 @@
 
             <div class="me-md-auto text-center text-md-start">
                 <div class="copyright">
-                    &copy; Copyright <strong><span>Tech Revo</span></strong>. All Rights Reserved
+                    &copy; Copyright <strong><span>Royal Lucky (10)</span></strong>. All Rights Reserved
                 </div>
                 {{-- <div class="credits">
                     Designed by <a href="#">Hancie Phago and Nitesh Hamal</a>
