@@ -10,7 +10,7 @@
                         <p>
                             State of Punjab<br>
                             India<br><br>
-                          
+
                             <strong>Website:</strong> Royallucky.in<br>
                             <strong>Email:</strong> royallucky@mail.com<br>
                         </p>
@@ -19,7 +19,7 @@
                     <div class="col-lg-2 col-md-6 footer-links">
                         <h4>Useful Links</h4>
                         <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="{{url('about-us')}}">About us</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="{{ url('about-us') }}">About us</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
                         </ul>
@@ -30,16 +30,21 @@
                         <ul>
                             <li><i class="bx bx-chevron-right"></i> <a href="#">Lottery</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a href="#">Buy Tickets</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="{{url('today-result')}}">View Results</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="{{ url('today-result') }}">View Results</a>
+                            </li>
                         </ul>
                     </div>
 
-                    <div class="col-lg-4 col-md-6 footer-newsletter">
-                        <h4>Join Our Newsletter</h4>
+                    <div class="col-lg-4 col-md-4 footer-newsletter">
+                        <h3>Royal Lucky 10<span>.</span></h3>
+                        <img src="{{ url('assets/img/lottery_image.webp') }}" class="img-fluid"
+                            style="max-width:150px" />
+                        {{-- <h4>Join Our Newsletter</h4>
                         <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
                         <form action="" method="post">
                             <input type="email" name="email"><input type="submit" value="Subscribe">
-                        </form>
+                        </form> --}}
+
                     </div>
 
                 </div>

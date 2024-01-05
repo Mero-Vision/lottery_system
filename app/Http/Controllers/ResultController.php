@@ -57,10 +57,16 @@ class ResultController extends Controller
 
         $currentDate = Carbon::today()->format('Y-m-d');
 
-        $onepmdata = Lottery::with('media')
-        ->where('time', '=', "1:00 PM")
+        $currentTime = Carbon::now()->format('h:i A');
+
+        if (strtotime($currentTime) >= strtotime("1:00 PM")) {
+            $onepmdata = Lottery::with('media')
+            ->where('time', '=', "1:00 PM")
             ->where('date', '>=', $currentDate)
-            ->get();
+                ->get();
+        } else {
+            $onepmdata = [];
+        }
 
         return view('onepm_result', compact('onepmdata'));
     }
@@ -88,13 +94,17 @@ class ResultController extends Controller
 
     public function eightPmIndex()
     {
-
         $currentDate = Carbon::today()->format('Y-m-d');
 
-        $eightpmdata = Lottery::with('media')
-        ->where('time', '=', "8:00 PM")
-        ->where('date', '>=', $currentDate)
-            ->get();
+        $currentTime = Carbon::now()->format('h:i A');
+        if (strtotime($currentTime) >= strtotime("8:00 PM")) {
+            $eightpmdata = Lottery::with('media')
+            ->where('time', '=', "8:00 PM")
+            ->where('date', '>=', $currentDate)
+                ->get();
+        } else {
+            $eightpmdata = [];
+        }
 
 
         return view('eightpm_result', compact('eightpmdata'));
