@@ -38,14 +38,17 @@
             <div class="container" data-aos="fade-up">
 
                 <div class="section-title">
-                    <h2>{{$lottery->lottery_name}}</h2>
+                    <h2>{{ $lottery->lottery_name }}</h2>
                 </div>
 
                 <div class="row" data-aos="fade-up" data-aos-delay="100">
 
-                   
 
-                   <img src="{{$lottery->getFirstMediaUrl('lottery_image')}}" style="max-width: 500px;" class="img-fluid d-block mx-auto"/>
+
+                    <img src="{{ $lottery->getFirstMediaUrl('lottery_image') }}" id="myImg" data-bs-toggle="modal"
+                        data-bs-target="#myModal" style="max-width: 500px;" class="img-fluid d-block mx-auto" />
+
+
 
                 </div>
 
@@ -54,7 +57,35 @@
 
     </main><!-- End #main -->
 
+    <!-- The Modal -->
+    <div class="modal" id="myModal">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">{{ $lottery->lottery_name }}</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <img src="{{ $lottery->getFirstMediaUrl('lottery_image') }}" style="max-width: 600px;"
+                        class="img-fluid d-block mx-auto" />
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
     @include('homeLayout.footer')
+
+
 
 </body>
 
