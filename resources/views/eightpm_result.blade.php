@@ -49,33 +49,34 @@
                     <p>We are excited to announce the winning numbers for today's lottery draw. Check your
                         tickets carefully, and best of luck to all participants!</p>
                 </div>
-<br><br>
-                <div class="row text-center mt-5" data-aos="fade-up" data-aos-delay="100"
+                
+                <div class="row text-center mt-3" data-aos="fade-up" data-aos-delay="100"
                     style="max-width: 500px; margin: 0 auto;">
 
                     @forelse ($eightpmdata as $data)
                         <h5>Lottery Results for {{ \Carbon\Carbon::today()->format('F j, Y') }} - 8:00 PM Draw</h5>
 
-                        <img src="{{ $data->getFirstMediaUrl('lottery_image') }}" style="max-width: 500px;" class="mx-auto d-block img-fluid"/>
+                        <img src="{{ $data->getFirstMediaUrl('lottery_image') }}" style="max-width: 500px;"
+                            class="mx-auto d-block img-fluid" />
 
-                        <p class="mt-3">{!!$data->description!!}</p>
+                        <p class="mt-3">{!! $data->description !!}</p>
                     @empty
-                        <img src="{{ url('assets/img/gif.gif') }}" style="max-width: 400px;"/>
+                        <img src="{{ url('assets/img/gif.gif') }}" style="max-width: 400px;" />
                     @endforelse
-                   
+
                 </div>
 
-               
-
-
-
-                    
 
 
 
 
 
-               
+
+
+
+
+
+
 
 
 
