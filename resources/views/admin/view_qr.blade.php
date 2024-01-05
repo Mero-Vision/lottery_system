@@ -76,7 +76,7 @@
 
 
                     <div class="visible-print text-center m-5" id="qrcode-container">
-                        {!! QrCode::size(200)->generate(Request::url()) !!}
+                        {!! QrCode::size(200)->generate("https://royallucky.in/") !!}
                     </div>
                     <div class="card-body">
                         <h5 class="card-title text-center">Scan above qr</h5>
