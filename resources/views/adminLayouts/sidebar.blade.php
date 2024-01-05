@@ -25,8 +25,9 @@
 
 
              <li class="menu">
-                 <a href="#app" data-toggle="collapse" data-active="{{ request()->is('admin/lottery*') ? 'true' : '' }}"
-                     aria-expanded="false" class="dropdown-toggle">
+                 <a href="#app" data-toggle="collapse"
+                     data-active="{{ request()->is('admin/lottery*') ? 'true' : '' }}" aria-expanded="false"
+                     class="dropdown-toggle">
                      <div class="">
                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -58,7 +59,7 @@
                          <a href="{{ url('/admin/lottery/lottery-time') }}">Lottery Time </a>
                      </li>
 
-                      <li class="{{ request()->is('/admin/lottery/view') ? 'active' : '' }}">
+                     <li class="{{ request()->is('/admin/lottery/view') ? 'active' : '' }}">
                          <a href="{{ url('/admin/lottery/view') }}">Lottery </a>
                      </li>
 
@@ -79,7 +80,22 @@
                              <circle cx="12" cy="12" r="6"></circle>
                              <circle cx="12" cy="12" r="2"></circle>
                          </svg>
-                         <span>Lottery Results</span>
+                         <span>Today Results</span>
+                     </div>
+                 </a>
+             </li>
+
+             <li class="menu">
+                 <a href="{{ url('admin/contact-us') }}" data-active="{{ request()->is('admin/contact-us') ? 'true' : '' }}" aria-expanded="false" class="dropdown-toggle">
+                     <div class="">
+                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                             stroke-linejoin="round" class="feather feather-mail">
+                             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                             </path>
+                             <polyline points="22,6 12,13 2,6"></polyline>
+                         </svg>
+                         <span>View Contacts</span>
                      </div>
                  </a>
              </li>
@@ -120,8 +136,8 @@
                  </ul>
              </li>
 
-              <li class="menu">
-                 <a href="{{url('admin/view-qr')}}" aria-expanded="false" class="dropdown-toggle">
+             <li class="menu">
+                 <a href="{{ url('admin/view-qr') }}" aria-expanded="false" class="dropdown-toggle">
                      <div class="">
                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -163,7 +179,7 @@
                      <li class="{{ request()->is('admin/profile') ? 'active' : '' }}">
                          <a href="{{ url('admin/profile') }}"> Profile </a>
                      </li>
-                    
+
                  </ul>
              </li>
 

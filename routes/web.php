@@ -67,6 +67,9 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
     Route::get('/view-qr',[QRController::class,'index']);
 
     Route::get('profile',[ProfileController::class,'index']);
+
+    Route::get('/contact-us',[ContactController::class, 'adminIndex']);
+    Route::get('/contact-us/delete/{id}', [ContactController::class, 'destroy']);
     
     
 });
