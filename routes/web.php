@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
@@ -42,6 +43,8 @@ Route::get('today-result', [ResultController::class, 'todayResultIndex']);
 Route::get('result/1-pm-result', [ResultController::class, 'onePmIndex']);
 Route::get('result/6-pm-result', [ResultController::class, 'sixPmIndex']);
 Route::get('result/8-pm-result', [ResultController::class, 'eightPmIndex']);
+
+Route::get('about-us',[AboutController::class,'index']);
 
 Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
     

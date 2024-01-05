@@ -11,15 +11,15 @@
                             State of Punjab<br>
                             India<br><br>
                           
-                            <strong>Phone:</strong> +1 5589 55488 55<br>
-                            <strong>Email:</strong> info@example.com<br>
+                            <strong>Website:</strong> Royallucky.in<br>
+                            <strong>Email:</strong> royallucky@mail.com<br>
                         </p>
                     </div>
 
                     <div class="col-lg-2 col-md-6 footer-links">
                         <h4>Useful Links</h4>
                         <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="{{url('about-us')}}">About us</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
                         </ul>
@@ -30,7 +30,7 @@
                         <ul>
                             <li><i class="bx bx-chevron-right"></i> <a href="#">Lottery</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a href="#">Buy Tickets</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">View Results</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="{{url('today-result')}}">View Results</a></li>
                         </ul>
                     </div>
 

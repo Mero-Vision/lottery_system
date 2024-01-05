@@ -4,9 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Lottery</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
+    <title>Royal Lucky</title>
+    <meta content="Royal Lucky - Is the Premier Online Lottery Result Platform" name="description">
+    <meta content="Royal Lucky 10" name="keywords">
     @include('homeLayout.header')
 </head>
 
