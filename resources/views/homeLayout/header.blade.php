@@ -6,6 +6,7 @@
   700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,
   600i,700,700i"
     rel="stylesheet">
+    <meta name="google-site-verification" content="M-meyXsWnSPvGMBn-s_fb0yJMY864ZJ9-onElst2PZ8" />
 <link href="{{ url('assets/css/aos.css') }}" rel="stylesheet">
 <link href="{{ url('assets/css/homebootstrap.min.css') }}" rel="stylesheet">
 <link href="{{ url('assets/css/bootstrap-icons.css') }}" rel="stylesheet">
