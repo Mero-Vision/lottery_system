@@ -43,6 +43,8 @@ Route::get('today-result', [ResultController::class, 'todayResultIndex']);
 Route::get('result/1-pm-result', [ResultController::class, 'onePmIndex']);
 Route::get('result/6-pm-result', [ResultController::class, 'sixPmIndex']);
 Route::get('result/8-pm-result', [ResultController::class, 'eightPmIndex']);
+Route::get('old-results', [ResultController::class, 'oldResult']);
+Route::get('old-results/view/{slug}', [ResultController::class, 'oldResultImageView']);
 
 Route::get('about-us',[AboutController::class,'index']);
 

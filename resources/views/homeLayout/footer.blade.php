@@ -34,7 +34,7 @@
                         </ul>
                     </div>
 
-                    <div class="col-lg-3 col-md-4 footer-newsletter">
+                    <div class="col-lg-3 col-md-4 footer-links">
                         <h3>Royal Lucky 10<span>.</span></h3>
                         <img src="{{ url('assets/img/lottery_image.webp') }}" class="img-fluid"
                             style="max-width:150px" />

@@ -24,9 +24,9 @@
 
                 <ol>
                     <li><a href="{{ url('/') }}">Home</a></li>
-                    <li>Contact Us</li>
+                    <li>View Data</li>
                 </ol>
-                <h2>Contact Us</h2>
+                <h2>View Data</h2>
 
             </div>
         </section><!-- End Breadcrumbs -->
@@ -38,20 +38,14 @@
             <div class="container" data-aos="fade-up">
 
                 <div class="section-title">
-                    <h2>Contact</h2>
-                    <p>If you have any inquiries, feedback, or concerns, please do not hesitate to contact us. Our
-                        dedicated support team is here to assist you. Whether you have questions about the lottery
-                        process, need assistance with the website, or have suggestions for improvement, we welcome your
-                        communication.</p>
+                    <h2>{{$lottery->lottery_name}}</h2>
                 </div>
 
                 <div class="row" data-aos="fade-up" data-aos-delay="100">
 
                    
 
-                    <div class="col-lg-12">
-                       @livewire('contact-us-livewire')
-                    </div>
+                   <img src="{{$lottery->getFirstMediaUrl('lottery_image')}}" style="max-width: 500px;" class="img-fluid d-block mx-auto"/>
 
                 </div>
 

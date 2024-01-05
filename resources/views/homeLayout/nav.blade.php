@@ -16,8 +16,8 @@
                         href="{{ url('result/8-pm-result') }}">8:00 PM Results</a></li>
                 <li><a class="nav-link scrollto {{ request()->is('today-result') ? 'active' : '' }}"
                         href="{{ url('today-result') }}">Today Results</a></li>
-                <li><a class="nav-link scrollto" href="#services">Old Results</a></li>
-                <li><a class="nav-link scrollto" href="{{ url('contact-us') }}">Contact</a></li>
+                <li><a class="nav-link scrollto {{ request()->is('old-results') ? 'active' : '' }}" href="{{url('old-results')}}">Old Results</a></li>
+                <li><a class="nav-link scrollto {{ request()->is('contact-us') ? 'active' : '' }}" href="{{ url('contact-us') }}">Contact</a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
