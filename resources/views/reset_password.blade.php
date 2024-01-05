@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
-    <title>Reset Password</title>
+    <title>Royal Lucky | Reset Password</title>
     <link rel="icon" type="image/x-icon" sizes="256x256" href="{{ url('assets/img/256.ico') }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ url('assets/img/icon.png') }}">
     <link rel="icon" type="image/x-icon" href="{{ url('assets/img/32.ico') }}">
