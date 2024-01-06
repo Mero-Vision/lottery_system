@@ -25,9 +25,9 @@
         <a href="{{ url('/login') }}" class="get-started-btn scrollto">Login</a>
     </div>
 
-     {{-- <script>
+     <script>
     document.addEventListener("contextmenu", function(e) {
         e.preventDefault();
     }, false);
-    </script> --}}
+    </script>
 </header><!-- End Header -->
