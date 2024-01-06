@@ -94,7 +94,7 @@
                                         </svg></a>
                                 </div>
                                 <div class="text-center user-info">
-                                    <img src="{{$user->getFirstMediaUrl('profile_image') }}" alt="avatar" style="width: 150px">
+                                    <img src="{{ Avatar::create($user->name)->toBase64() }}" alt="avatar" style="width: 100px">
                                    
                                     <p class="mt-2">{{auth()->user()->name}}</p>
                                 </div>

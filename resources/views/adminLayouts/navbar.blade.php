@@ -5,7 +5,8 @@
         <ul class="navbar-item theme-brand flex-row  text-center">
             <li class="nav-item theme-logo">
                 <a href="{{url('admin/dashboard')}}">
-                    <img src="{{$user->getFirstMediaUrl('profile_image') }}" class="navbar-logo" alt="logo">
+                    
+                    <img src="{{ Avatar::create($user->name)->toBase64() }}" class="navbar-logo" alt="logo">
                 </a>
             </li>
             <li class="nav-item theme-text">
@@ -40,7 +41,7 @@
             <li class="nav-item dropdown user-profile-dropdown">
                 <a href="javascript:void(0);" class="nav-link dropdown-toggle user" id="userProfileDropdown"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                    <img src="{{$user->getFirstMediaUrl('profile_image') }}" alt="avatar">
+                    <img src="{{ Avatar::create($user->name)->toBase64() }}" alt="avatar">
                 </a>
                 <div class="dropdown-menu position-absolute" aria-labelledby="userProfileDropdown">
                     <div class="">
